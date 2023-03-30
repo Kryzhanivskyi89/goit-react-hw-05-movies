@@ -27,21 +27,7 @@ const App = () => {
         setSearchText(text);       
         };               
     };
-  // function fetchMovies() {
-  //           fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`)
-  //               .then(response => response.json())
-                // .then(image => {
-                //     if (!image.total) {
-                //         return Notiflix.Notify.failure('Sorry, there are no images to your search. Please try again');
-                //     }                    
-                //     setImages(prevState => [...prevState, ...image.hits]);                                        
-                //     setTotalImages(prevState => image.total);                    
-                // })
-                // .catch(error => error)
-                // .finally(() => {
-                    // setIsLoading(false) ;
-        //         });
-        // }
+  
 
   
   return (

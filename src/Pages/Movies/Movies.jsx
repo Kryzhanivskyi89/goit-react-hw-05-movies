@@ -1,17 +1,24 @@
 import React from "react"
 import { useState } from 'react'
 import PropTypes from 'prop-types';
-
 import { Outlet } from "react-router-dom"
 // import MovieDetails from "../MovieDetails/MovieDetails";
 import style from './styles.module.css'
 
-
-// const API_KEY = 'f1f839cdf74a86a5131b1ff774a00522'  
+  
 const Movies = ({handleSearch}) => {
 
     const [value, setValue] = useState('');
 
+    // const [searchText, setSearchText] = useState('')
+    // const handleSearch = text => {        
+    //     if (text !== searchText) {
+    //     // setPage(1);
+    //     // setImages([]);
+    //     setSearchText(text);       
+    //     };               
+    // };
+    
 	const handleChange = (e) => {
 		setValue( e.target.value )		
 	}
@@ -20,12 +27,12 @@ const Movies = ({handleSearch}) => {
         e.preventDefault();
         handleSearch(value);
     };
-
-    // function searchMovies() {
+// const API_KEY = 'f1f839cdf74a86a5131b1ff774a00522'
+    // function searchMovies({results, title, id}) {
     //         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false`)
     //             .then(response => response.json())
-                // .then(image => {
-                //     if (!image.total) {
+                // .then(results => {
+                //     if (!results.total) {
                 //         return Notiflix.Notify.failure('Sorry, there are no images to your search. Please try again');
                 //     }                    
                 //     setImages(prevState => [...prevState, ...image.hits]);                                        
@@ -37,9 +44,9 @@ const Movies = ({handleSearch}) => {
         //         });
         // return (
         //     <ul>
-                // {/* {movies.map((movie) => {
-                //     return <li>
-                //     {movie}
+                // {/* {results.map((result) => {
+                //     return <li key={id}>
+                //     {title}
                 //     </li>
                 // }
                 // )} */}
