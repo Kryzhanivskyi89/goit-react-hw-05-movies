@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import Home from "../Pages/Home/Home";
 import MovieDetails from "../Pages/MovieDetails/MovieDetails";
 import Movies from "../Pages/Movies/Movies";
 import Layout from "./Layout/Layout";
 
-const API_KEY = 'f1f839cdf74a86a5131b1ff774a00522'  
+// const API_KEY = 'f1f839cdf74a86a5131b1ff774a00522'  
 // https://developers.themoviedb.org/3/trending/get-trending
 // https://developers.themoviedb.org/3/search/search-movies
 // https://developers.themoviedb.org/3/movies/get-movie-details
@@ -27,9 +27,9 @@ const App = () => {
         setSearchText(text);       
         };               
     };
-  function fetchMovies() {
-            fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`)
-                .then(response => response.json())
+  // function fetchMovies() {
+  //           fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`)
+  //               .then(response => response.json())
                 // .then(image => {
                 //     if (!image.total) {
                 //         return Notiflix.Notify.failure('Sorry, there are no images to your search. Please try again');
@@ -37,11 +37,11 @@ const App = () => {
                 //     setImages(prevState => [...prevState, ...image.hits]);                                        
                 //     setTotalImages(prevState => image.total);                    
                 // })
-                .catch(error => error)
-                .finally(() => {
+                // .catch(error => error)
+                // .finally(() => {
                     // setIsLoading(false) ;
-                });
-        }
+        //         });
+        // }
 
   
   return (

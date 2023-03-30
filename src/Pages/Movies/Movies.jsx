@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom"
 import style from './styles.module.css'
 
 
-const API_KEY = 'f1f839cdf74a86a5131b1ff774a00522'  
+// const API_KEY = 'f1f839cdf74a86a5131b1ff774a00522'  
 const Movies = ({handleSearch}) => {
 
     const [value, setValue] = useState('');
@@ -21,9 +21,9 @@ const Movies = ({handleSearch}) => {
         handleSearch(value);
     };
 
-    function searchMovies() {
-            fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false`)
-                .then(response => response.json())
+    // function searchMovies() {
+    //         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false`)
+    //             .then(response => response.json())
                 // .then(image => {
                 //     if (!image.total) {
                 //         return Notiflix.Notify.failure('Sorry, there are no images to your search. Please try again');
@@ -31,11 +31,21 @@ const Movies = ({handleSearch}) => {
                 //     setImages(prevState => [...prevState, ...image.hits]);                                        
                 //     setTotalImages(prevState => image.total);                    
                 // })
-                .catch(error => error)
-                .finally(() => {
+                // .catch(error => error)
+                // .finally(() => {
                     // setIsLoading(false) ;
-                });
-        }
+        //         });
+        // return (
+        //     <ul>
+                // {/* {movies.map((movie) => {
+                //     return <li>
+                //     {movie}
+                //     </li>
+                // }
+                // )} */}
+    //         </ul>
+    //     )
+    // }
 
     return (
         <div className={style.searchbar}>            
