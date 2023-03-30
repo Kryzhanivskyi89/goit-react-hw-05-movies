@@ -1,6 +1,14 @@
+import React from "react"
 
 
-const Reviews = 2
+
+const Reviews = () => {
+    return (
+        <div>
+            Reviews
+        </div>
+    )
+}
 
 
 export default Reviews
