@@ -1,83 +1,52 @@
-import React from "react"
-import { useState } from 'react'
+import React from "react";
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Outlet } from "react-router-dom"
-// import MovieDetails from "../MovieDetails/MovieDetails";
-import style from './styles.module.css'
 
-  
-const Movies = ({handleSearch}) => {
+import fetchMovies from '../../components/API/api';
+import Searchbar from "components/Searchbar/Searchbar";
+import MovieItems from '../../components/MovieItems/MovieItems'
+import Loader from "components/Loader/Loader";
 
-    const [value, setValue] = useState('');
+ 
+const Movies = () => {
 
-    // const [searchText, setSearchText] = useState('')
-    // const handleSearch = text => {        
-    //     if (text !== searchText) {
-    //     // setPage(1);
-    //     // setImages([]);
-    //     setSearchText(text);       
-    //     };               
-    // };
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [movies, setMovies] = useState([]);
+    const [totalMovie, setTotalMovie] = useState(1);
+    const [showLoading, setShowLoading] = useState(false);
+
+    useEffect(() => {
+        if (!searchParams.get('query')) return;
+        setShowLoading(true);
+        setMovies(null);
+
+        fetchMovies(`search/movie`, searchParams.get('query'))
+            .then(data => {
+                setMovies(data.results);
+                setTotalMovie(data.total_results);
+                setShowLoading(false);
+            })
+            .catch(console.log);
+  }, [searchParams]);
     
-	const handleChange = (e) => {
-		setValue( e.target.value )		
-	}
-	
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        handleSearch(value);
-    };
-// const API_KEY = 'f1f839cdf74a86a5131b1ff774a00522'
-    // function searchMovies({results, title, id}) {
-    //         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false`)
-    //             .then(response => response.json())
-                // .then(results => {
-                //     if (!results.total) {
-                //         return Notiflix.Notify.failure('Sorry, there are no images to your search. Please try again');
-                //     }                    
-                //     setImages(prevState => [...prevState, ...image.hits]);                                        
-                //     setTotalImages(prevState => image.total);                    
-                // })
-                // .catch(error => error)
-                // .finally(() => {
-                    // setIsLoading(false) ;
-        //         });
-        // return (
-        //     <ul>
-                // {/* {results.map((result) => {
-                //     return <li key={id}>
-                //     {title}
-                //     </li>
-                // }
-                // )} */}
-    //         </ul>
-    //     )
-    // }
-
+  
     return (
-        <div className={style.searchbar}>            
-            <form className={style.SearchForm} onSubmit={handleSubmit}>
-                <button type="submit" className={style.SearchformButton}>
-                    <span className={style.searchform__button__label}>Search</span>
-                </button>
-                <input
-                    className={style.searchform__input}
-                    type="text"
-                    autoComplete="off"
-                    autoFocus
-                    placeholder="Search movies"
-                    onChange={handleChange}
-                    value={value}
-                />
-            </form>            		
-            <Outlet/>
-            {/* <MovieDetails /> */}
-        </div>
+        <>
+            <Searchbar
+                setSearchParams={setSearchParams}
+                searchParams={searchParams}
+            />
+            
+            {showLoading && <Loader />}
+            {movies && movies.length !== 0 && <MovieItems movieItems={movies} />}
+            {totalMovie === 0 && <div>Not found movies</div>}
+        </>        
     )
 }
 
 Movies.propTypes = {
-    handleSearch: PropTypes.func.isRequired,
+    handleSearch: PropTypes.func
 };
 
 

@@ -1,20 +1,21 @@
 import { NavLink } from "react-router-dom";
+
+const navElems = [
+  { href: '/', text: 'Home' },
+  { href: 'movies', text: 'Movies' },
+];
+
 const Header = () => {
     return (
         <div>
             <nav>
                 <ul>
-                    <li>
-                        <NavLink to="/" end>Home</NavLink>
+                    {navElems.map(({ href, text }, i) => (
+                        <li key={i}>
+                        <NavLink to={href} end>{text}</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/movies">Movies</NavLink>
-                    <li>
-                        <NavLink to="/movies/:movieId">MovieDetails</NavLink> 
-                    </li>
-                    </li>
-                </ul>
-                
+                    ))}
+                </ul>                
             </nav>
         </div>
     )

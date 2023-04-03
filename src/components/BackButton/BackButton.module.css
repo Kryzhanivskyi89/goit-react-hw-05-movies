@@ -1,0 +1,16 @@
+.button {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    margin: 10px;
+    padding: 5px;
+    border: solid 2px #0104af;
+    border-radius: 10px;
+    
+        &:hover,
+        &:focus {
+            background-color: #0104af;
+            color: #fff200;
+        }
+}

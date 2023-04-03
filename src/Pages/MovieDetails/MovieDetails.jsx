@@ -1,25 +1,81 @@
 import React from "react"
-import Cast from "../../components/Cast/Cast";
-import Reviews from "../../components/Reviews/Reviews";
+import { useParams, Outlet, Link} from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+import fetchMovies from '../../components/API/api';
+import BackButton from "components/BackButton/BackButton";
+import Loader from "components/Loader/Loader";
 
 
-const MovieDetails = ({backdrop_path, poster_path, title, vote_count, overview, genre_ids}) => {
+const MovieDetails = () => {
+    const [movie, setMovie] = useState(null);
+    const { movieId } = useParams();
+    const [showLoading, setShowLoading] = useState(false);
+
+    useEffect(() => {
+    setShowLoading(true);
+    fetchMovies(`movie/${movieId}`)
+        .then(data => {
+        setMovie(data);
+        setShowLoading(false);
+        })
+        .catch(console.log);
+    }, [movieId]);
+
+    if (!movie) {
+    return <>{showLoading && <Loader />}</>;
+    }
+    const {
+        title,
+        name,
+        overview,
+        genres,
+        release_date,
+        first_air_date,
+        poster_path,
+        vote_average,
+    } = movie;
+
+  const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
+
+  const userScore = vote_average.toFixed(1);
+
     return (
-        <li
-            // onClick={openModal}
-            // className={style.ImageGalleryItem}
-        >                
-            <img src={poster_path} alt={backdrop_path } />
-            <h2>{title}</h2>
-            <p>{vote_count}</p>
-            <h3>Overvier</h3>
-            <p>{overview}</p>
-            <h3>Genres</h3>
-            <p>{genre_ids}</p>
-            <h3>Additional information</h3>
-            <Cast />
-            <Reviews />
-        </li>        
+        <>    
+            <BackButton />
+            <div>
+                {!poster_path ? (<div />) : (
+                    <img
+                        src={imgUrl}
+                        alt={title || name}
+                        width="150"                    
+                    />
+                )}
+                <div>
+                    <h2 >
+                        {title || name} ({(first_air_date || release_date).slice(0, 4)})
+                    </h2>
+
+                    <p >User Score: {userScore}/10</p>
+
+                    <h3>Overview</h3>
+                    <p>{overview}</p>
+
+                    <h3>Genres</h3>
+                    <p>{genres.map(({ name }) => name).join(', ')}</p>
+                </div>
+            </div>
+            <div>
+                <h2>Addititonal information</h2>
+                <Link to="cast" >
+                    Cast
+                </Link>
+                <Link to="reviews" >
+                    Reviews
+                </Link>
+            </div>
+            <Outlet />
+        </>        
     )
 }
 
