@@ -30,7 +30,7 @@ const MovieDetails = () => {
 
   const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
-  const userScore = vote_average.toFixed(1);
+  const score = vote_average.toFixed(1);
 
     return (
         <>    
@@ -49,7 +49,7 @@ const MovieDetails = () => {
                         {title || name} ({(first_air_date || release_date).slice(0, 4)})
                     </h2>
 
-                    <p >User Score: {userScore}/10</p>
+                    <p >User Score: {score}/10</p>
 
                     <h3 className={style.title}>Overview</h3>
                     <p>{overview}</p>

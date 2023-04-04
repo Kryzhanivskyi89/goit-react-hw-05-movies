@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import fetchMovies from '../../components/API/api';
 import Searchbar from "components/Searchbar/Searchbar";
@@ -44,10 +43,6 @@ const Movies = () => {
         </>        
     )
 }
-
-Movies.propTypes = {
-    handleSearch: PropTypes.func
-};
 
 
 export default Movies

@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
-import  fetchMovies from '../../components/API/api';
-import  Loader  from 'components/Loader/Loader';
+import fetchMovies from '../../components/API/api';
+import Loader  from 'components/Loader/Loader';
 import style from './Cast.module.css';
 
 const Cast = () => {
@@ -34,17 +34,17 @@ const Cast = () => {
                 <li key={id} className={style.item}>
                 {profile_path ? (
                     <img
-                    src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-                    alt={name}                    
-                    width="100"
-                    className={style.img}
+                        src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+                        alt={name}                    
+                        width="100"
+                        className={style.img}
                     />
                 ) : (
                     <div className={style.imageNotFound}>Image not found</div>
                 )}
                 <div>
                     <p>
-                    <b>{name}</b>
+                        <b>{name}</b>
                     </p>
                     <p>
                     Character: <b>{character}</b>

@@ -1,5 +1,5 @@
-import style from './styles.module.css'
 import PropTypes from 'prop-types';
+import style from './styles.module.css'
 
 
 const Searchbar = ({ setSearchParams, searchParams }) => {
