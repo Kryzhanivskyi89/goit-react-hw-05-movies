@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy } from 'react';
 import Home from "../Pages/Home/Home";
-import Layout from "./Layout/Layout";
+import Layout from "../Pages/Layout/Layout";
 
 const App = () => {
   const Movies = lazy(() => import('../Pages/Movies/Movies'));
