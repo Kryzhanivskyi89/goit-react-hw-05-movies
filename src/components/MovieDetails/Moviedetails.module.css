@@ -1,0 +1,40 @@
+.filmInfo {
+    display: flex;
+    align-items: center;
+}
+
+.noImage {
+    background-color: #898989;
+}
+
+.img {
+    width: 200px;
+    margin-right: 50px;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+
+.cast,
+.reviews {
+    color: #0099ff;
+    text-decoration: none;
+    margin: 30px;
+    padding: 5px;
+    font-size: 20px;
+    line-height: 1.4;
+    text-transform: uppercase;
+
+    
+}
+
+.cast:hover,
+.reviews:hover,
+.cast:focus,
+.reviews:focus {
+    background-color: #0099ff;
+    border-radius: 20px;
+    color: #fff200;
+}

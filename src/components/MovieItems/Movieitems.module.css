@@ -1,0 +1,18 @@
+.list {
+    padding: 20px;
+}
+
+
+.item:not(:last-child){
+    margin-bottom: 20px;    
+}
+
+.link {
+    text-decoration: none;
+    color: #0099ff;
+}
+.link:hover,
+.link:focus {
+    background-color: #0099ff;
+    color: #fff200;
+}

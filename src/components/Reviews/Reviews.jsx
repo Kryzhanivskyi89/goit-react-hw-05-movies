@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import fetchMovies from '../../components/API/api';
 import Loader from "components/Loader/Loader";
-
+import style from './Reviews.module.css';
 
 const Reviews = () => {
     const [review, setReview] = useState(null);
@@ -28,9 +28,9 @@ const Reviews = () => {
     return (
         <>
         {review.length > 0 ? (
-            <ul >
+            <ul className={style.list}>
             {review.map(({ id, author, content }) => (
-                <li key={id} >
+                <li key={id} className={style.item}>
                 Author: <b>{author}</b>
                 <p>{content}</p>
                 </li>

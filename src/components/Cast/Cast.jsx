@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 import  fetchMovies from '../../components/API/api';
 import  Loader  from 'components/Loader/Loader';
-
+import style from './Cast.module.css';
 
 const Cast = () => {
     const [cast, setCast] = useState(null);
@@ -31,16 +31,16 @@ const Cast = () => {
         {cast.length > 0 ? (
             <ul>
             {cast.slice(0, 19).map(({ id, name, character, profile_path }) => (
-                <li key={id} >
+                <li key={id} className={style.item}>
                 {profile_path ? (
                     <img
                     src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-                    alt={name}
-                    
+                    alt={name}                    
                     width="100"
+                    className={style.img}
                     />
                 ) : (
-                    <div >Image not found</div>
+                    <div className={style.imageNotFound}>Image not found</div>
                 )}
                 <div>
                     <p>
