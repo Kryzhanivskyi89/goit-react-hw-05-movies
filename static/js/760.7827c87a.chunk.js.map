@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/760.7827c87a.chunk.js","mappings":"0JAMA,UANe,WACX,OACI,uBAGP,C","sources":["components/Error/Error.jsx"],"sourcesContent":[" const Error = ()=> {\n    return (\n        <>\n       </>\n    )\n}\nexport default Error;"],"names":[],"sourceRoot":""}
