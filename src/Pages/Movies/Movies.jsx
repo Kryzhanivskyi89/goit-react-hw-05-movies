@@ -6,7 +6,7 @@ import fetchMovies from '../../components/API/api';
 import Searchbar from "components/Searchbar/Searchbar";
 import MovieItems from '../../components/MovieItems/MovieItems'
 import Loader from "components/Loader/Loader";
-
+import style from '../Home/style.module.css';
  
 const Movies = () => {
 
@@ -38,7 +38,11 @@ const Movies = () => {
             />
             
             {showLoading && <Loader />}
-            {movies && movies.length !== 0 && <MovieItems movieItems={movies} />}
+            {movies && movies.length !== 0 &&
+                <div className={style.movieList}>
+                    <MovieItems movieItems={movies} />
+                </div>
+            }
             {totalMovie === 0 && <div>Not found movies</div>}
         </>        
     )

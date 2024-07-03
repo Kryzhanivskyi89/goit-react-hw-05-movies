@@ -9,11 +9,19 @@ const MovieItems = ({ movieItems }) => {
   
   return <ul className={style.list}> {movieItems.map(createItem)}</ul>;
   
-  function createItem({ id, original_title }) {
+  function createItem({ id, original_title, poster_path, vote_average }) {
     return (
-      <li key={id} className={style.item}>
+      <li key={id} className={style.movieItem}>
         <Link to={`/movies/${id}`} state={location} className={style.link}>
-          {original_title}
+          <img
+            className={style.movieImg}
+            src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+            alt={original_title}
+            width="264px"
+            height="384px"
+          />
+          <p className={style.movieTitle}>{original_title}</p>
+          <p className={style.movieScore}>User Scrore: {Math.round(vote_average * 10)}%</p>
         </Link>
       </li>
     );
