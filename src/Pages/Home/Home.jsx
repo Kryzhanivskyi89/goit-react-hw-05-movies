@@ -27,7 +27,7 @@ const Home = () => {
       </div>
 
       <div className={style.movieList}>
-        <h2>Trending today</h2>
+        <h2 className={style.movieListTitle}>Trending today:</h2>
         <>{movies && <MovieItems movieItems={movies}></MovieItems>}</>;
 
       </div>

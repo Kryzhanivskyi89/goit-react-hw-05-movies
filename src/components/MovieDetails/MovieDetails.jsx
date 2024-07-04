@@ -34,7 +34,7 @@ const MovieDetails = () => {
   const score = vote_average.toFixed(1);
 
     return (
-        <>    
+        <div className={style.wrap}>    
             <BackButton />
             <div className={style.filmInfo}>
                 {!poster_path ? (<div className={style.noImage}/>) : (
@@ -50,17 +50,17 @@ const MovieDetails = () => {
                         {title || name} ({(first_air_date || release_date).slice(0, 4)})
                     </h2>
 
-                    <p >User Score: {score}/10</p>
+                    <p className={style.desc}>User Score: {score}/10</p>
 
                     <h3 className={style.title}>Overview</h3>
-                    <p>{overview}</p>
+                    <p className={style.desc}>{overview}</p>
 
                     <h3 className={style.title}>Genres</h3>
-                    <p>{genres.map(({ name }) => name).join(', ')}</p>
+                    <p className={style.desc}>{genres.map(({ name }) => name).join(', ')}</p>
                 </div>
             </div>
             <div>
-                <h2>Addititonal information</h2>
+                <h2 className={style.title}>Addititonal information</h2>
                 <Link to="cast" className={style.cast}>
                     Cast
                 </Link>
@@ -71,7 +71,7 @@ const MovieDetails = () => {
             <Suspense fallback={<Loader />}>
                 <Outlet />
             </Suspense>
-        </>        
+        </div>        
     )
 }
 

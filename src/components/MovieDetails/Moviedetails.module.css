@@ -1,3 +1,12 @@
+.wrap {
+    background:
+        linear-gradient(67deg, #111 6.82%, rgba(17, 17, 17, 0) 100%),
+        url(../../image/retro-film-7698942_1920.jpg),
+        lightgray 295.604px -4.18px / 92.376% 104.171% no-repeat;
+        background-size: cover;
+        height: fit-content;
+}
+
 .filmInfo {
     display: flex;
     align-items: center;
@@ -16,6 +25,10 @@
     margin-bottom: 10px;
 }
 
+.title,
+.desc {
+    color: #fff;
+}
 
 .cast,
 .reviews {

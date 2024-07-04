@@ -29,14 +29,14 @@ const Cast = () => {
     return (
         <>
         {cast.length > 0 ? (
-            <ul>
+            <ul className={style.castList}>
             {cast.slice(0, 19).map(({ id, name, character, profile_path }) => (
                 <li key={id} className={style.item}>
                 {profile_path ? (
                     <img
                         src={`https://image.tmdb.org/t/p/w500${profile_path}`}
                         alt={name}                    
-                        width="100"
+                        width="264"
                         className={style.img}
                     />
                 ) : (

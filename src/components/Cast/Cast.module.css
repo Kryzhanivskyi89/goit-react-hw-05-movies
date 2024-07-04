@@ -1,5 +1,15 @@
+.castList {
+    display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+        grid-gap: 2rem;
+        padding: 20px;
+        list-style: none;
+}
 .item {
-    display: flex;
+    color: #fff;
+}
+.item:not(:last-child) {
+    margin-bottom: 20px;
 }
 
 .item:not(:last-child) {

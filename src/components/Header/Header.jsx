@@ -1,27 +1,49 @@
 import { NavLink } from "react-router-dom";
 import style from './Header.module.css'
 
+const Header = ({ isCurrent }) => {
+    return (    
+        <header className={style.header}>
+            <nav className={style.navigation}>
+                <a className={style.logo_header} href="./index.html">
+                    
+                </a>
 
-const navElems = [
-  { href: '/', text: 'Home' },
-  { href: 'movies', text: 'Movies' },
-];
-
-const Header = () => {
-    return (        
-            <nav className={style.nav}>
-                <ul className={style.list}>
-                    {navElems.map(({ href, text }, y) => (
-                        <li key={y}>
+                <div className={style.navigation_wrap}>
+                    <ul className={style.navigation_list}>
+                        <li class={style.navigation_item}>
                             <NavLink
-                                to={href}
-                                className={({ isActive }) =>
-                                    isActive ? `${style.active}` : `${style.link}`}
-                            >{text}</NavLink>
-                    </li>
-                    ))}
-                </ul>                
+                                to='/'
+                                className={`${style.navigation_link} ${isCurrent ? style.current : ''}`}  
+                                data-hover='Home'
+                                >Home
+                            </NavLink>
+                        </li>
+                        <li class={style.navigation_item}>
+                            <NavLink
+                                to='movies'
+                                className={style.navigation_link}  
+                                data-hover='Movies'
+                                >Movies
+                            </NavLink>
+                        </li>
+
+                        {/* {navElems.map(({ href, text, data_hover }, y) => (
+                            <li key={y}
+                                class={style.navigation_item}>
+                                <NavLink
+                                    to={href}
+                                    className={({ isActive }) =>
+                                        isActive ? `${style.current}` : `${style.navigation_link}`}
+                                    data-hover={data_hover}
+                                >{text}
+                                </NavLink>
+                        </li>
+                        ))} */}
+                    </ul>                
+                </div>
             </nav>
+        </header>
         
     )
 }

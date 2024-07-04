@@ -6,15 +6,15 @@
         lightgray 295.604px -4.18px / 92.376% 104.171% no-repeat;
     background-size: cover;
     height: 600px;
-    /* overflow: visible; */
     position: relative;
 }
 
 .heroTitle {
+    width: auto;
     position: absolute;
     top: 40%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    left: 40%;
+    transform: translateX(-30%) translateY(-50%);
     color: aquamarine;
     font-size: 3em;
 }
@@ -37,4 +37,12 @@
         lightgray 295.604px -4.18px / 92.376% 104.171% no-repeat;
     background-size: cover;
     height: fit-content;
+}
+
+.movieListTitle {
+    margin-top: 0px;
+    padding-top: 100px;
+    padding-left: 50%;
+    font-size: 24px;
+    margin-bottom: 0px;
 }
