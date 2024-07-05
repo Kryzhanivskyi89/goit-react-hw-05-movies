@@ -5,11 +5,16 @@
         lightgray 295.604px -4.18px / 92.376% 104.171% no-repeat;
         background-size: cover;
         height: fit-content;
+    padding-bottom: 20px;
 }
 
 .filmInfo {
     display: flex;
     align-items: center;
+}
+.filmInfo,
+.filmAddInfo {
+    margin-left: 20px;
 }
 
 .noImage {

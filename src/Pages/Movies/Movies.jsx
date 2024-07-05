@@ -39,9 +39,9 @@ const Movies = () => {
             
             {showLoading && <Loader />}
             {movies && movies.length !== 0 &&
-                <div className={style.movieList}>
+                <section className={style.movieList}>
                     <MovieItems movieItems={movies} />
-                </div>
+                </section>
             }
             {totalMovie === 0 && <div>Not found movies</div>}
         </>        

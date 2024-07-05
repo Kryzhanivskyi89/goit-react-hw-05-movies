@@ -6,7 +6,6 @@
     list-style: none;
 }
 
-
 .movieItem:not(:last-child){
     margin-bottom: 20px;    
 }

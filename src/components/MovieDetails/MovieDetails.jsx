@@ -10,6 +10,7 @@ import style from './Moviedetails.module.css';
 
 
 const MovieDetails = () => {
+    
     const [movie, setMovie] = useState(null);
     const { movieId } = useParams();
     const [showLoading, setShowLoading] = useState(false);
@@ -34,7 +35,7 @@ const MovieDetails = () => {
   const score = vote_average.toFixed(1);
 
     return (
-        <div className={style.wrap}>    
+        <section className={style.wrap}>    
             <BackButton />
             <div className={style.filmInfo}>
                 {!poster_path ? (<div className={style.noImage}/>) : (
@@ -59,7 +60,7 @@ const MovieDetails = () => {
                     <p className={style.desc}>{genres.map(({ name }) => name).join(', ')}</p>
                 </div>
             </div>
-            <div>
+            <div className={style.filmAddInfo}>
                 <h2 className={style.title}>Addititonal information</h2>
                 <Link to="cast" className={style.cast}>
                     Cast
@@ -71,7 +72,7 @@ const MovieDetails = () => {
             <Suspense fallback={<Loader />}>
                 <Outlet />
             </Suspense>
-        </div>        
+        </section>        
     )
 }
 

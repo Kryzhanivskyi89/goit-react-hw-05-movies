@@ -17,21 +17,22 @@ const Home = () => {
   }, []);
   
   return (
-    <div>
-      <div className={style.hero} >
+    <>
+      <section className={style.hero} >
         <h1 className={style.heroTitle}>
           "Find your favorite movies quickly and easily"
         </h1>
         <p className={style.heroDesc}>Discover new films and access detailed information including ratings, cast, and more. Enjoy exploring the best movies anytime? anywhere!</p>
 
-      </div>
+      </section>
 
-      <div className={style.movieList}>
-        <h2 className={style.movieListTitle}>Trending today:</h2>
-        <>{movies && <MovieItems movieItems={movies}></MovieItems>}</>;
-
-      </div>
-    </div>
+      {movies &&
+        <section className={style.movieList}>
+          <h2 className={style.movieListTitle}>Trending today:</h2>
+          <MovieItems movieItems={movies}></MovieItems>
+        </section>
+      }
+    </>
   )
 }
     
