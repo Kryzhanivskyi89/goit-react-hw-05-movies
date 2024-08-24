@@ -11,7 +11,7 @@ const Header = ({ isCurrent }) => {
 
                 <div className={style.navigation_wrap}>
                     <ul className={style.navigation_list}>
-                        <li class={style.navigation_item}>
+                        <li className={style.navigation_item}>
                             <NavLink
                                 to='/'
                                 className={`${style.navigation_link} ${isCurrent ? style.current : ''}`}  
@@ -19,7 +19,7 @@ const Header = ({ isCurrent }) => {
                                 >Home
                             </NavLink>
                         </li>
-                        <li class={style.navigation_item}>
+                        <li className={style.navigation_item}>
                             <NavLink
                                 to='movies'
                                 className={style.navigation_link}  

@@ -9,7 +9,7 @@ const Home = () => {
   const [movies, setMovies] = useState(null);
   
   useEffect(() => {
-    fetchMovies(`/trending/movie/day`)
+    fetchMovies(`trending/movie/day`)
       .then(data => {
         setMovies(data.results);
       })

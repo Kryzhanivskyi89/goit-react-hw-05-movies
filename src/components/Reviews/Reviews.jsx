@@ -31,8 +31,8 @@ const Reviews = () => {
             <ul className={style.list}>
             {review.map(({ id, author, content }) => (
                 <li key={id} className={style.item}>
-                Author: <b>{author}</b>
-                <p>{content}</p>
+                    Author: <b>{author}</b>
+                    <p className={style.content}>{content}</p>
                 </li>
             ))}
             </ul>

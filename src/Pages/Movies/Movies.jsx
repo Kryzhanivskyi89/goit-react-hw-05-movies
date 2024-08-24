@@ -14,20 +14,25 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [totalMovie, setTotalMovie] = useState(1);
     const [showLoading, setShowLoading] = useState(false);
-
+    console.log(movies)
     useEffect(() => {
-        if (!searchParams.get('query')) return;
-        setShowLoading(true);
-        setMovies(null);
+        const query = searchParams.get('query');
+        if (!query) return;
 
-        fetchMovies(`search/movie`, searchParams.get('query'))
+        setShowLoading(true);
+        setMovies([]); // Очистка стану з порожнім масивом
+
+        fetchMovies(`search/movie`, query, 1) // Передача параметра page
             .then(data => {
                 setMovies(data.results);
                 setTotalMovie(data.total_results);
                 setShowLoading(false);
             })
-            .catch(console.log);
-  }, [searchParams]);
+            .catch(error => {
+                console.log(error);
+                setShowLoading(false);
+            });
+    }, [searchParams]);
     
   
     return (
