@@ -1,105 +1,87 @@
-# React homework template
+Here's a draft for the README file for your movie search project:
 
-This project was created with
-[Create React App](https://github.com/facebook/create-react-app). To get
-acquainted and configure additional features
-[refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-## Создание репозитория по шаблону
+# Movie Search Project
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+This project is an interactive website designed to simplify the process of
+searching for and viewing information about movies. Users can discover popular
+movies, search for films based on various criteria, and view detailed pages with
+comprehensive movie information.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+## Features
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+- **Homepage for Popular Movies**: The homepage showcases the most popular
+  movies, giving users a quick overview of trending films.
+- **Search Functionality**: Users can search for movies based on different
+  criteria and navigate to detailed pages for each movie.
+- **Detailed Movie Pages**: Each movie has a dedicated page with comprehensive
+  information, including ratings, cast, and more.
+- **Seamless Navigation**: Web routing is integrated for smooth transitions
+  between pages, enhancing the user experience.
+- **State Management with Hooks**: React hooks are used to effectively manage
+  the state of the components.
+- **Asynchronous Data Fetching**: Axios is used for making asynchronous fetch
+  requests to retrieve movie data from the backend.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+## Technologies Used
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+- **React.js**: For building the user interface.
+- **React Hooks**: To manage component state.
+- **Webpack**: For bundling the application.
+- **JSON**: For handling movie data.
+- **Routing**: Implemented with React Router for smooth page navigation.
+- **npm**: For managing dependencies.
+- **Axios**: For making API requests to the backend.
 
-## Подготовка к работе
+## Installation
 
-1. Make sure you have an LTS version of Node.js installed on your computer.
-   [Download and install](https://nodejs.org/en/) if needed.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command.
-4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
-   page will automatically reload after saving changes to the project files.
+1. Clone the repository:
 
-## Deploy
+   ```bash
+   git clone https://github.com/your-username/movie-search-project.git
+   ```
 
-The production version of the project will automatically be linted, built, and
-deployed to GitHub Pages, in the `gh-pages` branch, every time the `main` branch
-is updated. For example, after a direct push or an accepted pull request. To do
-this, you need to edit the `homepage` field in the `package.json` file,
-replacing `your_username` and `your_repo_name` with your own, and submit the
-changes to GitHub.
+2. Navigate to the project directory:
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+   ```bash
+   cd movie-search-project
+   ```
 
-Next, you need to go to the settings of the GitHub repository (`Settings` >
-`Pages`) and set the distribution of the production version of files from the
-`/root` folder of the `gh-pages` branch, if this was not done automatically.
+3. Install the dependencies:
 
-![GitHub Pages settings](./assets/repo-settings.png)
+   ```bash
+   npm install
+   ```
 
-### Deployment status
+4. Start the development server:
 
-The deployment status of the latest commit is displayed with an icon next to its
-ID.
+   ```bash
+   npm start
+   ```
 
-- **Yellow color** - the project is being built and deployed.
-- **Green color** - deployment completed successfully.
-- **Red color** - an error occurred during linting, build or deployment.
+5. Open your browser and go to `http://localhost:3000` to view the app.
 
-More detailed information about the status can be viewed by clicking on the
-icon, and in the drop-down window, follow the link `Details`.
+## Usage
 
-![Deployment status](./assets/deploy-status.png)
+- **Homepage**: View the most popular movies as soon as you open the app.
+- **Search**: Use the search bar to find specific movies by title or other
+  criteria.
+- **Movie Details**: Click on any movie in the search results or popular movies
+  list to see more information.
 
-### Live page
+## Contributing
 
-After some time, usually a couple of minutes, the live page can be viewed at the
-address specified in the edited `homepage` property. For example, here is a link
-to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
+Contributions are welcome! If you have any suggestions or find any bugs, please
+open an issue or submit a pull request.
 
-If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
-`package.json` file.
+## License
 
-### Routing
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file
+for details.
 
-If your application uses the `react-router-dom` library for routing, you must
-additionally configure the `<BrowserRouter>` component by passing the exact name
-of your repository in the `basename` prop. Slashes at the beginning and end of
-the line are required.
+---
 
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## How it works
-
-![How it works](./assets/how-it-works.png)
-
-1. After each push to the `main` branch of the GitHub repository, a special
-   script (GitHub Action) is launched from the `.github/workflows/deploy.yml`
-   file.
-2. All repository files are copied to the server, where the project is
-   initialized and linted and built before deployment.
-3. If all steps are successful, the built production version of the project
-   files is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
+This README covers the key aspects of your project, including features,
+technologies used, installation instructions, and usage details. You can adjust
+it further based on your specific needs or preferences.

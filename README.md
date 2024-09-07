@@ -1,113 +1,73 @@
-# React homework template
+Here's a draft for the README file for your movie search project:
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-## Создание репозитория по шаблону
+# Movie Search Project
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+This project is an interactive website designed to simplify the process of searching for and viewing information about movies. Users can discover popular movies, search for films based on various criteria, and view detailed pages with comprehensive movie information.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+## Features
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+- **Homepage for Popular Movies**: The homepage showcases the most popular movies, giving users a quick overview of trending films.
+  
+- **Search Functionality**: Users can search for movies based on different criteria and navigate to detailed pages for each movie.
+  
+- **Detailed Movie Pages**: Each movie has a dedicated page with comprehensive information, including ratings, cast, and more.
+  
+- **Seamless Navigation**: Web routing is integrated for smooth transitions between pages, enhancing the user experience.
+  
+- **State Management with Hooks**: React hooks are used to effectively manage the state of the components.
+  
+- **Asynchronous Data Fetching**: Axios is used for making asynchronous fetch requests to retrieve movie data from the backend.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+## Technologies Used
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+- **React.js**: For building the user interface.
+- **React Hooks**: To manage component state.
+- **Webpack**: For bundling the application.
+- **JSON**: For handling movie data.
+- **Routing**: Implemented with React Router for smooth page navigation.
+- **npm**: For managing dependencies.
+- **Axios**: For making API requests to the backend.
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+## Installation
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/movie-search-project.git
+    ```
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+2. Navigate to the project directory:
+    ```bash
+    cd movie-search-project
+    ```
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-## Подготовка к работе
+4. Start the development server:
+    ```bash
+    npm start
+    ```
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+5. Open your browser and go to `http://localhost:3000` to view the app.
 
-## Деплой
+## Usage
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+- **Homepage**: View the most popular movies as soon as you open the app.
+- **Search**: Use the search bar to find specific movies by title or other criteria.
+- **Movie Details**: Click on any movie in the search results or popular movies list to see more information.
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+## Contributing
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+Contributions are welcome! If you have any suggestions or find any bugs, please open an issue or submit a pull request.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+## License
 
-### Статус деплоя
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+---
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+This README covers the key aspects of your project, including features, technologies used, installation instructions, and usage details. You can adjust it further based on your specific needs or preferences.
